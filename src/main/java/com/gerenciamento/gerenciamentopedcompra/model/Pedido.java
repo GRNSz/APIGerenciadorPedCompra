@@ -6,8 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 public class Pedido {
 
     @NotNull (message = "O id o Pedido não pode ser nulo.")

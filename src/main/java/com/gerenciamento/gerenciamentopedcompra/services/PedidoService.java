@@ -29,16 +29,17 @@ public class PedidoService {
 
     @PostMapping("/inserirped")
     public Pedido inserirPedido(@Valid @RequestBody Pedido pedido) {
+
         Set<ConstraintViolation<Pedido>> validate = validator.validate(pedido);
         if (!validate.isEmpty()) {
             throw new IllegalArgumentException("Erro ao inserir pedido");
         }
+
         // validator.validate(pedido);
         pedidos.add(pedido);
         System.out.println("Pedido inserido com sucesso");
         return pedido;
-    }
 
-    
+    }
 
 }
